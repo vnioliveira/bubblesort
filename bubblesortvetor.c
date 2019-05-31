@@ -4,6 +4,68 @@
 #include<time.h>
 #include <stdbool.h>
 
+//funcao que cria arquivo txt
+
+bool criaarquivo (long int vetor[], long int n ){
+  long int i;
+  FILE *pont_arq; // cria variável ponteiro para o arquivo
+  
+  //abrindo o arquivo com tipo de abertura w
+  pont_arq = fopen("numeros_random.txt", "w");
+  
+  //testando se o arquivo foi realmente criado
+  if(pont_arq == NULL)
+  {
+  printf("\nErro na abertura do arquivo!\n");
+  return false;
+  }
+  
+  
+  for (i = 0; i < n; i++) { 
+ 	fprintf(pont_arq, "%li ", vetor[i]); 
+ }
+  
+  //usando fclose para fechar o arquivo
+  fclose(pont_arq);
+  
+  printf("\nDados de vetor ordenado gravados com sucesso!\n");
+  
+  getch();
+	
+	return true;
+}
+	
+
+//funcao para criar arquivo ordenado
+bool criaarquivoordenado (long int vetor[], long int n ){
+  long int i;
+  FILE *pont_arq; // cria variável ponteiro para o arquivo
+  
+  //abrindo o arquivo com tipo de abertura w
+  pont_arq = fopen("numeros_ordenados.txt", "w");
+  
+  //testando se o arquivo foi realmente criado
+  if(pont_arq == NULL)
+  {
+  printf("\nErro na abertura do arquivo!\n");
+  return false;
+  }
+  
+  
+  for (i = 0; i < n; i++) { 
+ 	fprintf(pont_arq, "%li ", vetor[i]); 
+ }
+  
+  //usando fclose para fechar o arquivo
+  fclose(pont_arq);
+  
+  printf("\nDados gravados com sucesso!\n");
+  
+  getch();
+	
+	return true;
+}
+
 // funÃ§Ã£o pra trocar lista sequencial
 bool trocaSeq(long int *xp, long int *yp)
 {

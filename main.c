@@ -40,7 +40,8 @@ int main ()
 
     clock_t t;
     t = clock();
-
+    
+	criaarquivo (arr2,n);
     //ordenando a lista encadeada
     bubbleSortEnc(comeco);
 
@@ -57,7 +58,7 @@ int main ()
 
     //ordenando a lista encadeada
     bubbleSortSeq(arr2, n);
-
+	criaarquivoordenado (arr2, n );
     //Print lista depois de ordenar.
 	  printf("\n Lista depois de ordenar sequencial.\n");
     printVetorSeq(arr2, n);
